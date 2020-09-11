@@ -12,7 +12,7 @@ class ExerciseFTest {
     void searchCity() throws IOException {
         ExerciseF exerciseF = new ExerciseF();
         String word = "sisayang";
-        int expected = 10;
+        int expected = 2;
         int actual = exerciseF.SearchCity(word).size();
         assertEquals(expected,actual);
     }

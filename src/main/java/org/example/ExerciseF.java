@@ -32,7 +32,7 @@ public class ExerciseF {
             String country = object.get("country").getAsString();
             String name = object.get("name").getAsString();
 
-            if (country.equals("ID")&&levenshtein.distance(name,input)<=3.0){
+            if (country.equals("ID")&&levenshtein.distance(name,input)<=2.9){
                 result.add(name);
             }
         }
