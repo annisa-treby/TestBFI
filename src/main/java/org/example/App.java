@@ -18,7 +18,7 @@ public class App
 
         //Code Test F
         ExerciseF exerciseF = new ExerciseF();
-        List<String> cities = exerciseF.SearchCity("sisayang");
+        List<String> cities = exerciseF.SearchCity("pulxu pqnjzng");
         for (String city : cities){
             System.out.println(city);
         }

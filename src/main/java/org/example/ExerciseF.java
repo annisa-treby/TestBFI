@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import info.debatty.java.stringsimilarity.JaroWinkler;
 import info.debatty.java.stringsimilarity.Levenshtein;
 
 import java.io.IOException;
@@ -27,12 +28,13 @@ public class ExerciseF {
         JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) request.getContent()));
         JsonArray array = root.getAsJsonArray();
 
+        JaroWinkler jaroWinkler = new JaroWinkler();
         for (JsonElement element: array) {
             JsonObject object = element.getAsJsonObject();
             String country = object.get("country").getAsString();
             String name = object.get("name").getAsString();
 
-            if (country.equals("ID")&&levenshtein.distance(name,input)<=2.9){
+            if (country.equals("ID")&&jaroWinkler.distance(name,input)<=0.26){
                 result.add(name);
             }
         }
